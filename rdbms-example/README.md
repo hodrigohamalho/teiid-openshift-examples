@@ -64,11 +64,11 @@ For this example we need a PostgreSQL database. If you already have existing Pos
  You can also create this database from command line by executing the following	
 
  ```bash
-oc new-app \	
-  -e POSTGRESQL_USER=user \	
-  -e POSTGRESQL_PASSWORD=mypassword \	
-  -e POSTGRESQL_DATABASE=sampledb \	
-  postgresql:9.5	
+oc new-app \
+  -e POSTGRESQL_USER=user \
+  -e POSTGRESQL_PASSWORD=mypassword \
+  -e POSTGRESQL_DATABASE=sampledb \
+  postgresql:9.5
 ```	
 
 The above command automatically creates `secret` in OpenShift for you, from where the credentials are read for the application. If you are working with your own database, then create a `secret` as shown below
