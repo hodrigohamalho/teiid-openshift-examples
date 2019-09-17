@@ -220,6 +220,7 @@ Response:
     {
       "id": 11,
       "name": "Nicholas Ferguson",
+      "name": "Nicholas Ferguson",
       "ssn": "CST01003                 ",
       "zip": null
     },
@@ -246,9 +247,32 @@ discovery.3scale.net/description-path: "/swagger.json"
 
 If the 3Scale system is defined to same cluster and namespace then your OData API is automatically discovered by 3Scale, where user can configure the API management features.  
 
-### JDBC
+### JDBC Connection
 
-If you want to use the JDBC, it is not exposed to outside applications by default (no route created). It is only suitable for applications in the cloud. 
+If you want to use JDBC to connect to your virtual databases. You can use 
+this [JDBC Driver](https://oss.sonatype.org/service/local/repositories/releases/content/org/teiid/teiid/12.2.1/teiid-12.2.1-jdbc.jar). If you 
+would like to use it in your application, use the maven dependency:
+
+  <dependency>
+    <groupId>org.teiid</groupId>
+    <artifactId>teiid</artifactId>
+    <classifier>jdbc</classifier>
+    <version>${version.teiid}</version>
+  </dependency>
+
+To connect to your database use the following:
+
+URL: `jdbc:teiid:customer@mm://localhost:31000`
+
+JDBC Class: `org.teiid.jdbc.TeiidDriver`
+
+JDBC Driver: `teiid-12.2.1-jdbc.jar`
+
+As this example don't use authentication, no user and password is needed.
+
+### JDBC on Openshift
+
+JDBC it is not exposed to outside applications by default (no route created). It is only suitable for applications in the cloud. 
 
 If you have an external application that is using JDBC or the Postgres protocol issue the following:
 
