@@ -122,9 +122,9 @@ The below are the code changes that are required to make it customizable for you
 
 This example requires the VDB to be supplied as DDL based text file. The `src/main/resource` folder contains this example's `customer-vdb.ddl`. If you are using your own virtual database replace that file with yours.
 
-If your virtual database is not in the DDL form, but in .vdb or -vdb.xml format, then you can use the VDB Migration utility to convert into DDL form. For more information see [here](../README.md)
+If your virtual database is not in the DDL form, but in .vdb or -vdb.xml format, then you can use the VDB Migration utility to convert into DDL form. For more information see [here](../README.md).
 
-make sure you have your VDB copied over to `src/main/resource` folder, and then edit `/src/main/resources/application.properties` set `teiid.vdb-file` property to your vdb name.  The default is set to the `customer-vdb.ddl` example vdb.
+Make sure you have your VDB copied over to `src/main/resource` folder, and then edit `/src/main/resources/application.properties` set `teiid.vdb-file` property to your vdb name.  The default is set to the `customer-vdb.ddl` example vdb.
 
 ### Configuration
 
@@ -205,11 +205,11 @@ $mvn clean install -Popenshift -Dfabric8.namespace=`oc project -q`
 Once the build is completed, go back to the OpenShift web-console application and make sure you do not have any errors with deployment. Now go to "Applications/Routes" and find the OData endpoint. Click on the endpoint and then issue requests like below using browser.
 
 ```bash
-http://rdbms-example-odata-myproject.{ip}.nip.io/odata/CustomerZip?$format=json
+http://rdbms-example-odata-myproject.{ip}.nip.io/odata/portfolio/CustomerZip?$format=json
 
 Response:
 {
-  "@odata.context": "http://rdbms-example-odata-myproject.192.168.99.100.nip.io/odata/$metadata#CustomerZip",
+  "@odata.context": "http://rdbms-example-odata-myproject.192.168.99.100.nip.io/odata/portfolio/$metadata#CustomerZip",
   "value": [
     {
       "id": 10,
