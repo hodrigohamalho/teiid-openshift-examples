@@ -151,7 +151,7 @@ spring.datasource.sampledb.platform=sampledb
 Now, you can define above properties in `deploymentconfig.yml` instead of `application.properties` by defining below
 
 ```
-- name: SPRING_DATASOURCE_SAMPLEDB_JDBC_URL
+- name: SPRING_DATASOURCE_SAMPLEDB_JDBCURL
   value: jdbc:postgresql://localhost/sampledb
 ```
 > NOTE: When defining a environment property, characters like `.` are not allowed, but you can replace them with character `_` and application will convert them automatically at runtime.
@@ -159,7 +159,7 @@ Now, you can define above properties in `deploymentconfig.yml` instead of `appli
 The same property, if you defined a value for `url` inside a `secret` can be rewritten as
 
 ```
-- name: SPRING_DATASOURCE_SAMPLEDB_JDBC_URL
+- name: SPRING_DATASOURCE_SAMPLEDB_JDBCURL
   valueFrom:
      secretKeyRef:
        name: postgresql
