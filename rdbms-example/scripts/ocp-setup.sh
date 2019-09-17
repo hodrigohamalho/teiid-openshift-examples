@@ -1,5 +1,5 @@
 #CREATE PROJECT IN OPENSHIFT
-oc new-project teiid-dataservice
+oc new-project myproject
 
 # DEPLOY POSTGRES DATABASE
 oc new-app \
@@ -11,4 +11,6 @@ oc new-app \
 # CREATE SECRET TO CONNECT TO DATABASE (ADJUST TO YOUR VALUES)
 oc create -f secret.yaml
 
-
+# DEPLOY APPLICATION 
+# cd rdbms-example
+# mvn clean install -Popenshift -Dfabric8.namespace=`oc project -q`
