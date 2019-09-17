@@ -253,14 +253,16 @@ If you want to use JDBC to connect to your virtual databases. You can use
 this [JDBC Driver](https://oss.sonatype.org/service/local/repositories/releases/content/org/teiid/teiid/12.2.1/teiid-12.2.1-jdbc.jar). If you 
 would like to use it in your application, use the maven dependency:
 
-  <dependency>
-    <groupId>org.teiid</groupId>
-    <artifactId>teiid</artifactId>
-    <classifier>jdbc</classifier>
-    <version>${version.teiid}</version>
-  </dependency>
+```
+<dependency>
+  <groupId>org.teiid</groupId>
+  <artifactId>teiid</artifactId>
+  <classifier>jdbc</classifier>
+  <version>${version.teiid}</version>
+</dependency>
+```
 
-To connect to your database use the following:
+To connect to the database, use the following:
 
 URL: `jdbc:teiid:customer@mm://localhost:31000`
 
@@ -268,7 +270,7 @@ JDBC Class: `org.teiid.jdbc.TeiidDriver`
 
 JDBC Driver: `teiid-12.2.1-jdbc.jar`
 
-As this example don't use authentication, no user and password is needed.
+As this example don't use authentication, no credentials are needed.
 
 ### JDBC on Openshift
 
